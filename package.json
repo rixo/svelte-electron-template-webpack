@@ -1,10 +1,12 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-electron-app",
   "version": "1.0.0",
   "devDependencies": {
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
+    "electron": "^7.1.7",
     "mini-css-extract-plugin": "^0.6.0",
+    "npm-run-all": "^4.1.5",
     "serve": "^11.0.0",
     "style-loader": "^0.23.1",
     "svelte": "~3.16.7",
@@ -15,6 +17,12 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack-dev-server"
+    "dev:electron": "electron app",
+    "dev:server": "webpack-dev-server",
+    "dev": "run-p dev:server dev:electron",
+    "start": "cross-env NODE_ENV=production electron app"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
   }
 }

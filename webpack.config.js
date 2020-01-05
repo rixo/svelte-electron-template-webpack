@@ -29,7 +29,7 @@ module.exports = {
           loader: 'svelte-loader-hot',
           options: {
             dev,
-            hotReload: true,
+            hotReload: dev,
             hotOptions: {
               // whether to preserve local state (i.e. any `let` variable) or
               // only public props (i.e. `export let ...`)
